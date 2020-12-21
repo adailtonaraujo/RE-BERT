@@ -1,4 +1,5 @@
 # Extract software requirements from IOB RE-BERT classifier
+# Adapted from https://github.com/songyouwei/ABSA-PyTorch
 
 import torch
 import torch.nn.functional as F
@@ -135,16 +136,33 @@ def extract(classifier, review):
     for sentence in sent_text:
         sentences.append(sentence)
 
-    extracted_data = []
+    predictions = []
     for sentence in tqdm(sentences,desc="Extract software requirements candidates"):
       sent=sentence.strip()
       results = get_iob(classifier,sent)
       requirements_candidates = []
       for item in results:
         if item[1]['iob']!=-1: requirements_candidates.append(item[0])
-      extracted_data.append([sent,requirements_candidates,results])
+      predictions.append([sent,requirements_candidates,results])
+
+    features_extracted=list()
+    for predict in predictions:
+        iobAnt=-1
+        featu=list()
+        for p in predict[2]:
+          #o,b,i=p[1]['confidences']
+          token=p[0]
+          iob=p[1]['iob']
+
+          if iob!=-1 and iobAnt==-1:
+            featu.append(token)
+          elif iob!=-1 and iobAnt!=-1:
+            #print(len(featu)-1, featu)
+            featu[len(featu)-1]= featu[len(featu)-1] +' '+token
+          iobAnt=iob
+        features_extracted.append((';'.join(featu)))
     
-    return extracted_data
+    return predictions, features_extracted
 
 def re_bert_model(options):
     parser = argparse.ArgumentParser()
