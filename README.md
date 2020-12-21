@@ -9,7 +9,7 @@ RE-BERT is a software requirements extractor from app reviews. The extraction of
 
 If you want to use our pre-trained RE-BERT to extract software requirements from app reviews, then start with the RE-BERT API demo code. We trained RE-BERT with eight app review datasets ([available here](https://github.com/jsdabrowski/CAiSE-20)) from different domains. BERT-based models usually have satisfactory generalizability, so you can use RE-BERT to extract software requirements for other apps. If the quality is not adequate for your tasks, see the section on training your own RE-BERT model.
 
-* [Pre-trained RE-BERT Model (Notebook)](rebert_api.ipynb)
+* [Pre-trained RE-BERT Model (Notebook)](Pre_trained_RE_BERT_Model_API_Demo.ipynb)
 
 ### Training your own RE-BERT model
 
