@@ -15,7 +15,7 @@ If you want to use our pre-trained RE-BERT to extract software requirements from
 
 The first step in training your own model is to generate a training set in the BIO format. ([Read more details about the training file format](datasets)). We provide a notebook with a step-by-step guide to conduct RE-BERT training. This notebook can be used to reproduce the experiments in the paper published in ACM SAC-RE 2021.
 
-* [Training your own RE-BERT Model (Notebook)](rebert_train.ipynb)
+* [Training your own RE-BERT Model (Notebook)](Training_a_RE_BERT_model.ipynb)
 
 
 ### Contributions and Bug reports
