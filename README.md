@@ -1,8 +1,8 @@
 # RE-BERT: Automatic Extraction of Software Requirements from App Reviews using BERT Language Model
 
-RE-BERT is a software requirements extractor from app reviews. The extraction of software requirements from app reviews can be defined as a token classification problem. We used the BIO format (short for beginning, inside, outside) to structure the training set reviews, as shown in Figure 1. Note that the tokens for each sentence in the training set are labeled with class B, which indicates that the token represents the beginning of a software requirement; class I, which indicates that the token is inside a software requirement; and class O, which indicates that the token is outside a software requirement in the sentence.
+RE-BERT is a software requirements extractor from app reviews. The extraction of software requirements from app reviews can be defined as a token classification problem. We used the BIO format (short for beginning, inside, outside) to structure the training set reviews, as shown in the figure below. Note that the tokens for each sentence in the training set are labeled with class B, which indicates that the token represents the beginning of a software requirement; class I, which indicates that the token is inside a software requirement; and class O, which indicates that the token is outside a software requirement in the sentence.
 
-![Figure 1](https://raw.githubusercontent.com/adailtonaraujo/RE-BERT/main/img.PNG =500x100)
+<img src="https://raw.githubusercontent.com/adailtonaraujo/RE-BERT/main/img.PNG" alt="drawing" width="500"/>
 
 
 ### Using a pre-trained RE-BERT model
